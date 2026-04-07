@@ -52,10 +52,10 @@ export interface HeroImage {
 
 /** Holiday entry for the calendar */
 export interface Holiday {
-  date: string; // "YYYY-MM-DD" or "MM-DD" for recurring
+  date: string; // ISO format (YYYY-MM-DD)
   name: string;
-  emoji: string;
-  recurring: boolean; // True = every year
+  type: "public" | "restricted" | "observance";
+  category: "national" | "religious" | "cultural";
 }
 
 /** Available visual modes */
