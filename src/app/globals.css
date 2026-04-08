@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F5F5F7;
   --foreground: #171717;
+}
+
+.dark {
+  --background: #0A0A0F;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +17,75 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Global Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Custom Scrollbar (thin, themed)
+   ============================================ */
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cal-tertiary, #ddd) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--cal-tertiary, #ddd);
+  border-radius: 99px;
+}
+
+/* ============================================
+   Focus Ring Styles
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--cal-primary, #4A90D9);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ============================================
+   Selection Colors
+   ============================================ */
+
+::selection {
+  background-color: var(--cal-tertiary, #E3F0FB);
+  color: var(--cal-text, #1A2332);
+}
+
+/* ============================================
+   Prevent layout shift on scrollbar appearance
+   ============================================ */
+
+html {
+  overflow-y: scroll;
+}
+
+/* ============================================
+   Border-left-3 utility (Tailwind v4)
+   ============================================ */
+
+@utility border-l-3 {
+  border-left-width: 3px;
 }
