@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premium Interactive Calendar Component
 
-## Getting Started
+A production-ready, interactive wall calendar component built with modern React. This project delivers a high-performance, aesthetically pleasing physical-calendar-inspired UI with advanced features.
 
-First, run the development server:
+## Technical Stack & Choices
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js & React**: Built on Next.js leveraging the latest React 19 features for optimal performance, smooth server-client boundaries, and clean architecture.
+- **TypeScript**: Ensuring robust code quality, strict type safety, and great developer experience, especially useful for managing complex domain data like holidays and calendar states.
+- **Tailwind CSS v4**: Utilized for utility-first styling to ensure rapid development alongside a sophisticated, highly customizable design system without the bloat of traditional CSS.
+- **Framer Motion**: Integrated to provide premium, physics-based micro-interactions, layout transitions, and fluid animations for the interactive elements (e.g., hover states, note panels, month transitions).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Interactive Calendar Grid**: A meticulously designed grid system mimicking a physical wall calendar (`CalendarGrid.tsx` & `DayCell.tsx`).
+- **Date Range Selector**: Allows users to dynamically select date ranges seamlessly (`RangeSelector.tsx`).
+- **Dynamic Theme Engine**: A unique system (`lib/theme-engine.ts`) that adapts UI colors contextually reflecting monthly aesthetics.
+- **Persistent Notes System**: Integrated notes management locally persisting user notes per day (`NotesPanel.tsx`).
+- **Rich Holiday Dataset**: Full integration of 2026 Indian holidays (`lib/holidays.ts`), featuring semantic classifications (public, restricted, religious) visualized via smart, auto-positioning hover tooltips and emojis.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- `src/components/` - Core UI blocks (`DayCell`, `CalendarGrid`, `NotesPanel`, etc.)
+- `src/lib/` - Utilities and domain logic (`date-utils.ts`, `holidays.ts`, `theme-engine.ts`)
+- `src/app/` - Next.js App Router entry points
 
-To learn more about Next.js, take a look at the following resources:
+## How to Run Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Prerequisites: Make sure you have Node.js (version 20 or higher recommended) installed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Install dependencies:**
+   In the root of the project directory, run:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **View the application:**
+   Open your browser and navigate to `http://localhost:3000`. 
+   The page will auto-reload as you make modifications to the code.
